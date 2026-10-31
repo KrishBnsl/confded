@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CS Deadlines</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>CS deadlines</h1>
+    <span class="status">
+      <span id="updated" class="muted"></span>
+      <button id="refresh" type="button" class="icon" title="Refresh now" aria-label="Refresh now">&#8635;</button>
+    </span>
+  </header>
+  <div class="controls">
+    <input id="search" type="search" placeholder="Search venues (ignores filters)" aria-label="Search venues">
+    <select id="rank" aria-label="Minimum rank">
+      <option value="A*">A* only</option>
+      <option value="A">A* and A</option>
+      <option value="all">All ranks</option>
+    </select>
+  </div>
+  <div id="chips" class="chips" role="group" aria-label="Areas to follow"></div>
+  <div id="error" class="error" hidden></div>
+  <main id="list"></main>
+  <details id="tba">
+    <summary>Not announced yet <span id="tba-count" class="muted"></span></summary>
+    <ul id="tba-list"></ul>
+  </details>
+  <footer class="muted">
+    Starred venues always show. Data: <a href="https://ccfddl.com/" target="_blank" rel="noopener">CCFDDL</a> (MIT).
+  </footer>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
